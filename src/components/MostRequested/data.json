@@ -41,12 +41,6 @@
       "title": "Jardinero",
       "descripcion": "¿Te vas de viaje? Prepara tu vehículo con servicios de limpieza experto.",
       "price": "$1000"
-    },
-    {
-      "imageUrl": "https://www.uniradioserver.com/media/news_thumbs/202207/20220720155714_218.jpg",
-      "title": "Lavado de autos",
-      "descripcion": "¿Te vas de viaje? Prepara tu vehículo con servicios de limpieza experto.",
-      "price": "$50"
     }
   ]
 }
