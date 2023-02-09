@@ -46,7 +46,7 @@ export default function Footer(){
                 <li><FontAwesomeIcon icon={faTwitter} className="absolute w-12 h-12"></FontAwesomeIcon></li>
             </ul>
           </div>
-          <div className="flex flex-row items-center p-10 gap-16 absolute bottom-px left-[540px] top-[760px] text-gray-600">  
+          <div className="flex flex-row items-center p-10 gap-16 absolute bottom-px left-[540px] top-[3350px] text-gray-600">  
             <span>Copyright © 2023 Contratá</span>
           </div>
         </footer>
