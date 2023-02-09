@@ -35,18 +35,18 @@ export default function Footer(){
 
           </div>
           
-          <div className="flex flex-row items-center p-8 gap-16 absolute left-[1.5px] top-[3295px]">
+          <div className="flex flex-row items-center p-8 gap-16 absolute left-[1.5px] top-[3200px]">
            <img src={Contrata}/>
           </div>
 
           <div className="columns-3">
-          <ul className="flex flex-row items-center p-10 gap-16 absolute w-[229.4px] h-[51px] left-[1.5px] top-[3368px]">
+          <ul className="flex flex-row items-center p-10 gap-16 absolute w-[229.4px] h-[51px] left-[1.5px] top-[3273px]">
                 <li><FontAwesomeIcon icon={faFacebook} className="absolute w-12 h-12"></FontAwesomeIcon></li>
                 <li><FontAwesomeIcon icon={faInstagram} className="absolute w-12 h-12"></FontAwesomeIcon></li>
                 <li><FontAwesomeIcon icon={faTwitter} className="absolute w-12 h-12"></FontAwesomeIcon></li>
             </ul>
           </div>
-          <div className="flex flex-row items-center p-10 gap-16 absolute bottom-px left-[540px] top-[3500px] text-gray-600">  
+          <div className="flex flex-row items-center p-10 gap-16 absolute bottom-px left-[540px] top-[760px] text-gray-600">  
             <span>Copyright © 2023 Contratá</span>
           </div>
         </footer>
