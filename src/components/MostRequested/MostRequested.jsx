@@ -61,7 +61,7 @@ const MostRequested = () => {
                 />
               </svg> </button>
 
-              <div id="carousel" className="carousel my-4 mx-auto flex items-center overflow-x-hidden scroll-smooth snap-mandatory touch-pan-x z-0 justify-center"
+              <div id="carousel" className="carousel my-4 mx-auto flex items-center justify-start overflow-x-hidden scroll-smooth snap-mandatory touch-pan-x z-0 justify-center"
           ref={carousel}>
 
           {data.resources.map((requested, index) => {
