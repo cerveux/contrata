@@ -107,7 +107,7 @@ export default function NavBar({changeModal}) {
             <a href="/servicios" className=" ml-3 text-base font-medium text-gray-500 hover:text-gray-900">
               Servicios
             </a>
-            <a href="#" className=" ml-3 text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="/faq" className=" ml-3 text-base font-medium text-gray-500 hover:text-gray-900">
               FAQ's
             </a>
           </Popover.Group>
