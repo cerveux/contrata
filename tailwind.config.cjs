@@ -6,17 +6,13 @@ module.exports = {
       colors: {
         buttons: {
           buttonGreen: "#7CC298",
-          saveButtonGreen:"#43936C",
-          pressedButtonGreen:"#20573D",
-          hoverButtonGreen:"#20573D",
+          saveButtonGreen:"#43936C"
         },
         backgroundColor: "#F5F5F5",
-        // blox: "#28315C", este color era mi prueba retirarlo no afecta verdad??
-        btnColor: "#7CC298", /* este color está repetido en la línea 8 */
+        blox: "#28315C",
+        btnColor: "#7CC298",
         textWhite: " #FFFFFF",
         backgroundCardColor: "#F5F7FA",
-        blueLinks: '#4285F4',
-        greyText: '#666666',
         labelColor:"#083A50",
         labelGrayColor:"#CACED8",
         focusColor:"#26B893"

@@ -1,10 +1,8 @@
 
-import { CardServices } from './../services/CardServices';
 
 const Card = ({imagen, title, description, price})=>{
-    
     return(
-        <a href="./servicesDetail" onClick={<CardServices service={title}/>}>
+        <a href="./servicesDetail">
         <div className="card bg-background-card-color w-[277px] h-[302px] rounded-2xl shadow-md">
             <div className="top ">
                 <img
