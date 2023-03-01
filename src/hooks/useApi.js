@@ -4,12 +4,16 @@ import { jobsFetched } from '../features/jobs/jobsSlice';
 import { userStatus } from '../features/user/userSlice';
 import { profileFetched } from '../features/profile/ProfileSlice';
 import { professionalsFetched } from '../features/professionalsSlice/professionalsSlice';
+import { loginReducer } from '../features//booleans/booleanSlice';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 export function useApi(
   initialValue = 'https://container-service-1.utth4a3kjn6m0.us-west-2.cs.amazonlightsail.com/'
 ) {
   const dispatch = useDispatch();
+
+  const loginStatus = useSelector(state=>state.modales)
 
   const url = initialValue;
 
@@ -56,23 +60,25 @@ export function useApi(
         .catch((error) => reject(error))
     );
   };
-
-  const userLogin = (data) => {
-    axios
-      .post(`${url}auth/login`, data)
-      .then(function (response) {
-        const verifiedUser = {
-          token: response.data.responseUser.token,
-          id: response.data.responseUser.user._id,
-          professional: response.data.responseUser.user.professional,
-        };
+   
+  const userLogin = (data)=>{
+    axios.post(`${url}auth/login`, data)
+    .then(function (response) {
+      const verifiedUser ={
+        token: response.data.responseUser.token,
+        id: response.data.responseUser.user._id,
+        professional: response.data.responseUser.user.professional,
+        avatarURL: response.data.responseUser.user.avatarURL
+      }
 
         dispatch(userStatus(verifiedUser));
 
         localStorage.setItem('user', JSON.stringify(verifiedUser));
       })
       .catch(function (error) {
-        console.log(error);
+        dispatch(
+          loginReducer(!loginStatus.invalidLogin)
+        )
       });
   };
 

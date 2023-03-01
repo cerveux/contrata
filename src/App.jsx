@@ -11,16 +11,33 @@ import Login from './components/Login';
 import NavBar from './components/NavBar';
 import { BoolHook } from './hooks/BoolHook';
 import Footer from './components/Footer';
-import Messages from './components/Messages';
 import PerfilProfesional from './components/PerfilProfesional/PerfilProfesional';
-import EditProfileProfessional from './components/Profile/EditProfileProfessional';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { userStatus } from './features/user/userSlice';
+import Team from './screens/Team';
+import InvalidLogin from './components/InvalidLogin';
 
-function App() {
+const App = () => {
   const [isModalOpen, changeModalStatus] = BoolHook(false);
+
+ const stateDispatch = useDispatch()
+
+  useEffect(() => {
+    if(localStorage.getItem('user')){
+      JSON.parse(localStorage.getItem('user'))
+      stateDispatch(
+        userStatus(JSON.parse(localStorage.getItem('user'))))
+    }
+   
+  }, [])
+
   return (
     <BrowserRouter>
       <NavBar changeModal={changeModalStatus} />
       <Login isOpen={isModalOpen} closeModal={changeModalStatus} />
+      <InvalidLogin />
       <section className='center'>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -37,6 +54,11 @@ function App() {
             path='/perfilProfesional'
             element={<PerfilProfesional />}
           />
+          <Route
+            path='/team'
+            element={<Team />}
+          />
+          
         </Routes>
       </section>
       <div className='footerDiv'>
