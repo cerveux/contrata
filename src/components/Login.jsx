@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import Modal from './Modal';
-import GoogleLogin from './GoogleLogin';
+/* import GoogleLogin from './GoogleLogin'; */
 import axios from 'axios';
 import Register from './Register';
 import { BoolHook } from '../hooks/BoolHook';
@@ -41,21 +41,7 @@ function Login({ isOpen, closeModal }) {
 
   const [activeLogin, switchLogin] = BoolHook();
 
-  const googleLoginHandler = async (credentials) => {
-    // No gestionar esto asi. Hacerlo con redux toolkit o al menos un custom hook de servicios
-    // O un archivo donde reunan todas las llamadas a la api en constantes para usarlas todos.
-    try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/google`,
-        credentials
-      );
-      /* console.log(data); */
-      // En data recibiran el token y el user para agregarlo a redux y a la local storage.
-    } catch (error) {
-      console.log('error', error.message);
-      // No se que quieren hacer en caso de error, en front.
-    }
-  };
+  
 
   const handleChange = (e) => {
     setUser({
@@ -101,10 +87,7 @@ function Login({ isOpen, closeModal }) {
               </div>
             </header>
             <div className='flex justify-center'>
-              <GoogleLogin
-                clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
-                cbresponse={googleLoginHandler}
-              />
+              
             </div>
             <Formik
               initialValues={{ email: '', password: '' }}
