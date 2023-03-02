@@ -5,7 +5,6 @@ import Correo from '../../assets/Correo.png';
 import envelope from '../../assets/envelope.png';
 import { opcionesApp } from '../../utils/opcionesApp';
 import marta from '../../assets/marta.png';
-import { Rerousel } from 'rerousel';
 
 import { useSearchParams, useParams, useNavigate } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi';
