@@ -1,7 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/fontawesome-free-brands";
 import contrata from "../assets/contrata.png";
-import Facebook1 from "../assets/Facebook1.png"
-import Instagram from "../assets/Instagram.png"
-import Twitter from "../assets/Twitter.png"
+import { Link } from "react-router-dom";
+
 
 
 
@@ -14,11 +19,13 @@ export default function Footer(){
               <img className="flex flex-col p-0 gap[50px] h-[61.28px] left-0 top-0 rounded-none" src={contrata}/>
 
             <ul className="flex flex-row gap-[20px] ">
-            <img src={Facebook1}/>
-            <img src={Instagram}/>
-            <img src={Twitter}/>
+              <li><FontAwesomeIcon icon={faFacebook} className="w-[50px] h-[51px]"></FontAwesomeIcon></li>
+              <li><FontAwesomeIcon icon={faInstagram} className="w-[50.4px] h-[50.4px]"></FontAwesomeIcon></li>
+              <li><FontAwesomeIcon icon={faTwitter} className="w-[49px] h-[42px]"></FontAwesomeIcon></li>
             </ul>
           </div>
+
+          <Link to='/team'><span className="flex mr-[82px] mt-[30px] text-neutral-700">Team S6-15-M-MERN</span></Link>
 
           <div className="columns-3 flex flex-row items-start  rounded-none max-sm:hidden -center">
               <ul>
@@ -29,6 +36,7 @@ export default function Footer(){
                 <li className=" font-family-['Gilroy-medium'] font-extrabold text-xs text-black leading-8">Contáctanos</li>
               </ul>
           </div>
+
         </div>
           <div className="flex flex-row items-center justify-center gap-6 mt-[20px] text-gray-600">  
             <span className="">Copyright © 2023 Contratá</span>

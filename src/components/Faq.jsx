@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Faqform from './Faqform';
 import HeaderFaqs from './HeaderFaqs';
-
 const Faq = () => {
   const [menu, setMenu] = useState(null);
 

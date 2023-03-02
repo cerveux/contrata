@@ -30,7 +30,6 @@ export function useApi(
   };
 
   const postUser = (data) => {
-    console.log(data, 'DATA');
     return new Promise((resolve, reject) =>
       fetch(
         'https://container-service-1.utth4a3kjn6m0.us-west-2.cs.amazonlightsail.com/auth/register',
@@ -49,6 +48,7 @@ export function useApi(
             token: result.user.token,
             id: result.user.user._id,
             professional: result.user.user.professional,
+            avatarURL:result.user.user.avatarURL
           };
 
           dispatch(userStatus(verifiedUser));
@@ -84,11 +84,13 @@ export function useApi(
 
   const professionalsList = (id, city) => {
     let searchCity = '';
+    let searchId ="";
 
     city != undefined && (searchCity = '&city=' + city);
+    id != undefined && (searchId = 'job=' + id)
 
     axios
-      .get(`${url}user?job=${id}${searchCity}`)
+      .get(`${url}user?${searchId}${searchCity}`)
       .then((resp) => {
         dispatch(professionalsFetched(resp.data.responseGetUser));
       })

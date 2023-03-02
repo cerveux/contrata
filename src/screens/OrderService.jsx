@@ -2,18 +2,19 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 // viene de cardServices
 import { useLocation } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export const OrderService = () => {
   const { state } = useLocation();
   const { email } = state || {};
 
-  console.log(state);
+  // console.log(state);
   const form = useRef();
-  console.log(email);
+  // console.log(email);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(form.current);
+    // console.log(form.current);
     emailjs
       .sendForm(
         "service_60byldi",
@@ -23,11 +24,20 @@ export const OrderService = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          console.log("message sent");
+          // console.log(result.text);
+          Swal.fire({
+            icon: 'success',
+            title: 'Todo salió muy bien...',
+            text: 'Muy pronto tendrás una respuesta a tu consulta!',
+          })
+          e.target.reset();
         },
         (error) => {
-          console.log(error.text);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algo salió mal!',
+          })
         }
       );
   };
@@ -59,7 +69,7 @@ export const OrderService = () => {
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 max-sm:text-xs   leading-tight focus:outline-none focus:shadow-outline"
-                id="fromName"
+                id="fromname"
                 type="text"
                 name="from_name"
                 placeholder="Nombre Completo"
@@ -94,12 +104,10 @@ export const OrderService = () => {
                 id="location"
                 type="text"
                 name="location"
-                placeholder="Escriba su ubicación/localidad"
               >
-               
+                
               </input>
             </div>
-
             <div className="mb-4 w-full md:w-1/2 p-2">
               <label
                 className="block text-gray-700 text-sm max-sm:text-xs font-bold mb-2"
@@ -128,7 +136,7 @@ export const OrderService = () => {
               <textarea
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline max-sm:text-xs "
                 id="ask"
-                type="number"
+                type="text"
                 rows="4"
                 name="message"
                 placeholder="Describe detalladamente tu problema"
