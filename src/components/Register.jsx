@@ -49,7 +49,7 @@ function Register({ switchRegistro, closeModal }) {
       console.log(response, ' la respuesta');
     });
     closeModal();
-    navigate('/perfil')
+    navigate('/perfil');
   };
 
   return (
@@ -64,7 +64,6 @@ function Register({ switchRegistro, closeModal }) {
            '
           >
             <h3
-              onClick='text-decoration-line: underline;'
               className='text-[#ffffff]  text-xl  ml-14 mb-7 mr-1 font-khula underline underline-offset-8 decoration-btnColor decoration-4'
             >
               Registro
