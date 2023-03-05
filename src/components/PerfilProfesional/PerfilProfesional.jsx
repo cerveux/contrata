@@ -114,7 +114,7 @@ export default function PerfilProfesional() {
             <p className='m-4'>{profile.profile.user.email}</p>
           </div>
 
-          <div className='w-full flex justify-center max-[320px]:ml-[42px] max-[600px]:absolute  max-[600px]:top-[75px] max-[320px]:w-full'>
+          <div className='w-full flex justify-center max-[320px]:ml-[42px] max-[600px]:absolute  max-[600px]:top-[75px] max-[320px]:w-[100px]'>
             <button
               onClick={sendMessage}
               className=' max-[600px]:w-40  bg-[#43936c] text-white py-3 px-8 rounded-lg w-full whitespace-nowrap   text-center flex justify-center items-center max-[320px]:w-[195px] max-[320px]:absolute max-[320px]:left-[50px] '
