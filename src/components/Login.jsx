@@ -35,8 +35,8 @@ function Login({ isOpen, closeModal }) {
   const [,,userLogin] = useApi();
 
   const [user, setUser] = useState({
-    password: 'felipe',
-    email: 'felipe@felipe.com',
+    password: '',
+    email: '',
   });
 
   const [activeLogin, switchLogin] = BoolHook();
